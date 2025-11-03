@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda simplă</title>
+  <script>
+    window.onload = () => {
+      const form = document.getElementById("form");
+      const tabel = document.getElementById("tabel");
+
+      form.onsubmit = (e) => {
+        e.preventDefault();
+
+        const nume = document.getElementById("nume").value;
+        const telefon = document.getElementById("telefon").value;
+
+        const rand = document.createElement("tr");
+        rand.innerHTML = "<td>" + nume + "</td><td>" + telefon + "</td>";
+        tabel.appendChild(rand);
+
+        form.reset();
+      };
+    };
+  </script>
+</head>
+<body>
+  <h1>Agenda mea</h1>
+
+  <table border="1">
+    <tr>
+      <th>Nume</th>
+      <th>Telefon</th>
+    </tr>
+    <tbody id="tabel"></tbody>
+  </table>
+
+  <h2>Adauga contact</h2>
+  <form id="form">
+    <input type="text" id="nume" placeholder="Nume">
+    <input type="text" id="telefon" placeholder="Telefon">
+    <button type="submit">Adauga</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Eveniment custom simplu</title>
+  <script>
+    window.onload = () => {
+      const buton = document.getElementById("myBtn");
+
+    
+      const evenimentCustom = new Event("produsSelectat");
+
+      document.addEventListener("produsSelectat", () => {
+        console.log("Evenimentul custom a fost declansat!");
+      });
+
+      buton.addEventListener("click", () => {
+        console.log("Ai apasat pe buton.");
+        document.dispatchEvent(evenimentCustom);
+      });
+    };
+  </script>
+</head>
+<body>
+  <button id="myBtn">Apasa</button>
+</body>
+</html>

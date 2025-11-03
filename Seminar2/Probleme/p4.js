@@ -1,0 +1,12 @@
+function AddToArray(){
+    let args = arguments;
+    let array = args[0];
+    for(var i = 1; i<args.length;i++){
+        array.push(args[i]);
+    }
+    return array;
+}
+
+let array = ["a"];
+
+console.log(AddToArray(array, "b", "c").join(", "));

@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.item {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 5px 0;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.item:hover {
+  background-color: #d1e7ff;
+  transform: scale(1.05);
+}

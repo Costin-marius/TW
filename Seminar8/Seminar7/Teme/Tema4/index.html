@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thatsapp</title>
+    <style>
+        :root {
+            --base-background-color: white;
+            --secondary-background-color: whitesmoke;
+            --base-text-color: black;
+            --secondary-text-color: gray;
+            --badge-color: lime;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 30% auto;
+            grid-template-rows: 10% auto 10%;
+            height: 100vh;
+            grid-template-areas:
+                "search-bar chat-heading"
+                "contacts chat"
+                "contacts chat-input";
+        }
+
+        .search-bar {
+            grid-area: search-bar;
+            background-color: var(--secondary-background-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            height: 2em;
+            width: 90%;
+            border: none;
+            border-radius: 0.9em;
+            padding-left: 10px;
+        }
+
+        .contacts {
+            grid-area: contacts;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+
+        .contact:hover {
+            background-color: var(--secondary-background-color);
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--badge-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .chat-heading {
+            grid-area: chat-heading;
+            background-color: var(--secondary-background-color);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .chat {
+            grid-area: chat;
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .message {
+            background-color: white;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
+        .chat-input {
+            grid-area: chat-input;
+            background-color: var(--secondary-background-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px;
+        }
+
+        .chat-input input[type="text"] {
+            width: 85%;
+            padding: 8px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .chat-input input[type="button"] {
+            background-color: var(--badge-color);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search or start chat" id="search">
+            </div>
+            <div class="contacts">
+                <div class="contact">
+                    <div class="avatar">J</div>
+                    <div class="contact-container">
+                        <div class="name">Jim</div>
+                        <div class="status">Here</div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="avatar">J</div>
+                    <div class="contact-container">
+                        <div class="name">Jane</div>
+                        <div class="status">Here</div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="avatar">J</div>
+                    <div class="contact-container">
+                        <div class="name">John</div>
+                        <div class="status">Here</div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="avatar">B</div>
+                    <div class="contact-container">
+                        <div class="name">Batman</div>
+                        <div class="status">Here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-heading">
+            <div class="avatar">J</div>
+            <div class="interlocutor">Jim</div>
+        </div>
+        <div class="chat">
+            <div class="message">
+                <div class="content">Message from me</div>
+                <div class="time">10-10-10</div>
+            </div>
+            <div class="message">
+                <div class="content">Message from Jim</div>
+                <div class="time">10-10-10</div>
+            </div>
+            <div class="message">
+                <div class="content">Message from me</div>
+                <div class="time">10-10-10</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="input message here">
+            <input type="button" value=">">
+        </div>
+    </div>
+</body>
+</html>

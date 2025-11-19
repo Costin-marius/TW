@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tabla de SAH</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Tabla de SAH</h2>
+
+    <div class="chess-board" id="board"></div>
+
+    <script>
+      
+      const board = document.getElementById('board');
+      for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+          const cell = document.createElement('div');
+          cell.className = 'cell';
+          
+          const isWhite = (row + col) % 2 === 0;
+          cell.classList.add(isWhite ? 'white' : 'black');
+          board.appendChild(cell);
+        }
+      }
+    </script>
+  </body>
+</html>
